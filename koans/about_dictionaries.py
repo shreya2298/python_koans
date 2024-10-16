@@ -52,6 +52,6 @@ class AboutDictionaries(Koan):
         cards = {}.fromkeys(('red warrior', 'green elf', 'blue valkyrie', 'yellow dwarf', 'confused looking zebra'), 42)
 
         self.assertEqual(5, len(cards))
-        self.assertEqual(__, cards['green elf'])
-        self.assertEqual(__, cards['yellow dwarf'])
+        self.assertEqual(42, cards['green elf'])
+        self.assertEqual(42, cards['yellow dwarf'])
 
