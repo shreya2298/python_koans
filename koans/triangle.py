@@ -18,8 +18,20 @@
 #
 def triangle(a, b, c):
     # DELETE 'PASS' AND WRITE THIS CODE
-    pass
+    lst = sorted([a,b,c])
+    if (lst[0] + lst[1]) < lst[2]:
+        raise TriangleError("The sum of two sides should be greater than third one")
 
+    if a > 0 and b > 0 and c > 0:
+        if (a==b==c):
+            return 'equilateral'
+        elif (a==b) | (a==c) | (b==c):
+            return 'isosceles'
+        else:
+            return 'scalene'
+    else:
+        raise TriangleError("All sides must be greater than 0")
+    
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
     pass
