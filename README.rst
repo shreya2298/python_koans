@@ -239,4 +239,4 @@ FPIP. So here's a little plug for their very cool Python podcast:
 * https://www.frompythonimportpodcast.com/
 
 A big thanks also to Mike Pirnat @pirnat and Kevin Chase @kjc have pitched in
-as co-maintainers at various times
+as co-maintainers at various times.
