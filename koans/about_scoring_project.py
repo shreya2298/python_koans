@@ -34,7 +34,35 @@ from runner.koan import *
 
 def score(dice):
     # You need to write this method
-    pass
+    
+    # Count the occurrences of each die face
+    counts = {i: 0 for i in range(1, 7)}
+    for die in dice:
+        counts[die] += 1
+
+    total_score = 0
+
+    # Score for three ones
+    if counts[1] >= 3:
+        total_score += 1000  # Set of three ones
+        counts[1] -= 3  # Remove the three ones from the count
+
+    # Score for other triples
+    for num in range(2, 7):
+        if counts[num] >= 3:
+            total_score += num * 100  # Three of any number other than one
+
+            # Remove the three of that number from the count
+            counts[num] -= 3
+
+    # Score for remaining ones
+    total_score += counts[1] * 100  # Each remaining one is worth 100 points
+
+    # Score for remaining fives
+    total_score += counts[5] * 50  # Each remaining five is worth 50 points
+
+    return total_score
+
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
